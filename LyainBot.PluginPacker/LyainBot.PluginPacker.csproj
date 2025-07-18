@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <PackageId>LyainBot.PluginPacker</PackageId>
-        <Version>0.0.1</Version>
+        <Version>0.0.2</Version>
         <Authors>LyainTeam</Authors>
         <Description>Plugin packer for LyainBot</Description>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
