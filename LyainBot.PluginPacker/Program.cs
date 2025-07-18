@@ -8,12 +8,12 @@ class Program
     {
         if (args.Length < 2)
         {
-            Console.WriteLine("Usage: lypacker <output-directory> <zip-file-name>");
+            Console.WriteLine("Usage: lypacker <output-directory>");
             return;
         }
 
         string outputDirectory = args[0];
-        string zipFileName = args[1];
+        string zipFileName;
 
         try
         {
@@ -24,6 +24,7 @@ class Program
                 Console.WriteLine("No .deps.json file found in the output directory.");
                 return;
             }
+            zipFileName = Path.Combine(outputDirectory, Path.GetFileNameWithoutExtension(depsFileName).Replace(".deps", "") + ".zip");
             string dllFileName = Path.GetFileNameWithoutExtension(depsFileName).Replace(".deps", "") + ".dll";
             if (!File.Exists(Path.Combine(outputDirectory, dllFileName)))
             {
